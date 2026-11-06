@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Dashboard | Smart Interview System</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+    {% include "navbar.html" %}
+
+
+    <main class="container">
+
+
+        <section class="dashboard-header">
+
+            <h1>
+                AI Interview Dashboard
+            </h1>
+
+            <p>
+                Prepare for technical interviews with
+                personalized AI-generated questions,
+                intelligent answer evaluation, and
+                detailed performance insights.
+            </p>
+
+        </section>
+
+
+        <section class="dashboard-grid">
+
+
+            <div class="dashboard-card">
+
+                <h2>
+                    Candidate Profile
+                </h2>
+
+                <p>
+                    Manage your personal information,
+                    education, and target role.
+                </p>
+
+                <a href="/profile">
+
+                    <button type="button">
+                        View Profile
+                    </button>
+
+                </a>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <h2>
+                    Resume
+                </h2>
+
+                <p>
+                    Upload and manage your resume so the
+                    AI interviewer can personalize your
+                    interview questions.
+                </p>
+
+                <a href="/resume">
+
+                    <button type="button">
+                        Manage Resume
+                    </button>
+
+                </a>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <h2>
+                    Start AI Interview
+                </h2>
+
+                <p>
+                    Choose your technical domain and
+                    difficulty level to begin a personalized
+                    AI interview.
+                </p>
+
+                <a href="/interview/setup">
+
+                    <button type="button">
+                        Start Interview
+                    </button>
+
+                </a>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <h2>
+                    Interview Results
+                </h2>
+
+                <p>
+                    Review your previous interview scores,
+                    AI feedback, strengths, improvements,
+                    and recommendations.
+                </p>
+
+                <a href="/results">
+
+                    <button type="button">
+                        View Results
+                    </button>
+
+                </a>
+
+            </div>
+
+
+        </section>
+
+
+        <section class="card dashboard-info">
+
+            <h2>
+                How It Works
+            </h2>
+
+
+            <div class="dashboard-grid">
+
+
+                <div>
+
+                    <h3>
+                        1. Build Your Profile
+                    </h3>
+
+                    <p>
+                        Add your education and target
+                        career role.
+                    </p>
+
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        2. Upload Resume
+                    </h3>
+
+                    <p>
+                        Upload your resume for AI-based
+                        skill extraction.
+                    </p>
+
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        3. Take an AI Interview
+                    </h3>
+
+                    <p>
+                        Receive technical questions
+                        personalized to your skills.
+                    </p>
+
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        4. Analyze Your Performance
+                    </h3>
+
+                    <p>
+                        Get detailed AI evaluation,
+                        feedback, and recommendations.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+</body>
+
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Profile | Smart Interview System</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+    {% include "navbar.html" %}
+
+
+    <main class="container">
+
+
+        <section class="dashboard-header">
+
+            <h1>
+                Candidate Profile
+            </h1>
+
+            <p>
+                Manage your personal information,
+                education, and career details.
+            </p>
+
+        </section>
+
+
+        <section class="card">
+
+
+            <form id="profileForm">
+
+
+                <div class="form-group">
+
+                    <label for="full_name">
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="full_name"
+                        name="full_name"
+                        placeholder="Enter your full name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="phone">
+                        Phone Number
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        placeholder="Enter your phone number"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="education">
+                        Education
+                    </label>
+
+                    <input
+                        type="text"
+                        id="education"
+                        name="education"
+                        placeholder="e.g. B.Tech in AI & ML"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="university">
+                        University
+                    </label>
+
+                    <input
+                        type="text"
+                        id="university"
+                        name="university"
+                        placeholder="Enter your university"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="graduation_year">
+                        Graduation Year
+                    </label>
+
+                    <input
+                        type="number"
+                        id="graduation_year"
+                        name="graduation_year"
+                        placeholder="e.g. 2027"
+                        min="2000"
+                        max="2100"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="target_role">
+                        Target Role
+                    </label>
+
+                    <input
+                        type="text"
+                        id="target_role"
+                        name="target_role"
+                        placeholder="e.g. AI/ML Engineer"
+                    >
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    id="save-profile-btn"
+                >
+                    Save Profile
+                </button>
+
+
+                <p
+                    id="profile-message"
+                    class="message"
+                ></p>
+
+
+            </form>
+
+
+        </section>
+
+
+    </main>
+
+
+    <script
+        src="{{ url_for('static', filename='js/profile.js') }}"
+    ></script>
+
+</body>
+
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Resume | Smart Interview System</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+    {% include "navbar.html" %}
+
+
+    <main class="container">
+
+
+        <section class="dashboard-header">
+
+            <h1>
+                Resume
+            </h1>
+
+            <p>
+                Upload your resume so the AI system can
+                extract your skills and personalize your
+                interview questions.
+            </p>
+
+        </section>
+
+
+        <!-- ============================= -->
+        <!-- RESUME UPLOAD                  -->
+        <!-- ============================= -->
+
+        <section class="card">
+
+            <h2>
+                Upload Resume
+            </h2>
+
+            <p>
+                Supported formats: PDF and DOCX.
+            </p>
+
+
+            <form
+                id="resumeForm"
+                enctype="multipart/form-data"
+            >
+
+
+                <div class="form-group">
+
+                    <label for="resume">
+                        Select Resume
+                    </label>
+
+                    <input
+                        type="file"
+                        id="resume"
+                        name="resume"
+                        accept=".pdf,.docx"
+                        required
+                    >
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    id="upload-resume-btn"
+                >
+                    Upload Resume
+                </button>
+
+
+                <p
+                    id="resume-message"
+                    class="message"
+                ></p>
+
+
+            </form>
+
+        </section>
+
+
+        <!-- ============================= -->
+        <!-- CURRENT RESUME                -->
+        <!-- ============================= -->
+
+        <section
+            id="resume-section"
+            class="card"
+        >
+
+            <h2>
+                Current Resume
+            </h2>
+
+
+            <div id="resume-details">
+
+                <p>
+                    No resume information loaded yet.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ============================= -->
+        <!-- EXTRACTED SKILLS              -->
+        <!-- ============================= -->
+
+        <section
+            id="skills-section"
+            class="card"
+        >
+
+            <h2>
+                Extracted Skills
+            </h2>
+
+
+            <div id="skills-container">
+
+                <p>
+                    Upload a resume to extract your
+                    technical skills.
+                </p>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <script
+        src="{{ url_for('static', filename='js/resume.js') }}"
+    ></script>
+
+
+</body>
+
+</html>

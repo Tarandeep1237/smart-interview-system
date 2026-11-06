@@ -1,0 +1,54 @@
+<nav class="navbar">
+
+    <div class="navbar-brand">
+
+        <a href="{{ '/dashboard' if session.get('user_id') else '/' }}">
+            Smart Interview
+        </a>
+
+    </div>
+
+
+    <div class="navbar-links">
+
+        {% if session.get('user_id') %}
+
+            <a href="/dashboard">
+                Dashboard
+            </a>
+
+            <a href="/profile">
+                Profile
+            </a>
+
+            <a href="/resume">
+                Resume
+            </a>
+
+            <a href="/interview/setup">
+                Start Interview
+            </a>
+
+            <a href="/results">
+                Results
+            </a>
+
+            <a href="/logout">
+                Logout
+            </a>
+
+        {% else %}
+
+            <a href="/login">
+                Login
+            </a>
+
+            <a href="/register">
+                Register
+            </a>
+
+        {% endif %}
+
+    </div>
+
+</nav>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Results | Smart Interview System</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+    {% include "navbar.html" %}
+
+
+    <main class="container">
+
+
+        <!-- ============================= -->
+        <!-- PAGE HEADER                    -->
+        <!-- ============================= -->
+
+        <section class="dashboard-header">
+
+            <h1>
+                Interview Results
+            </h1>
+
+            <p>
+                Review your AI interview performance,
+                question-wise evaluation, strengths,
+                improvements, and recommendations.
+            </p>
+
+        </section>
+
+
+        <!-- ============================= -->
+        <!-- LOADING SECTION                -->
+        <!-- ============================= -->
+
+        <section id="loading-section">
+
+            <div class="card">
+
+                <h2>
+                    Loading Results...
+                </h2>
+
+                <p>
+                    Retrieving your latest interview
+                    evaluation.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ============================= -->
+        <!-- NO RESULTS SECTION             -->
+        <!-- ============================= -->
+
+        <section
+            id="no-results-section"
+            style="display: none;"
+        >
+
+            <div class="card">
+
+                <h2>
+                    No Interview Results
+                </h2>
+
+                <p id="no-results-message">
+                    Complete an interview to view
+                    your results.
+                </p>
+
+
+                <a href="/interview/setup">
+
+                    <button type="button">
+                        Start Interview
+                    </button>
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- ============================= -->
+        <!-- RESULTS SECTION                -->
+        <!-- ============================= -->
+
+        <section
+            id="results-section"
+            style="display: none;"
+        >
+
+
+            <!-- Interview Summary -->
+
+            <div class="dashboard-card">
+
+                <h2>
+                    Interview Summary
+                </h2>
+
+
+                <div class="result-summary">
+
+                    <p>
+                        <strong>
+                            Domain:
+                        </strong>
+
+                        <span id="result-domain">
+                        </span>
+                    </p>
+
+
+                    <p>
+                        <strong>
+                            Difficulty:
+                        </strong>
+
+                        <span id="result-difficulty">
+                        </span>
+                    </p>
+
+
+                    <p>
+                        <strong>
+                            Status:
+                        </strong>
+
+                        <span id="result-status">
+                        </span>
+                    </p>
+
+
+                    <p>
+                        <strong>
+                            Overall Score:
+                        </strong>
+
+                        <span id="overall-score">
+                        </span>
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Question-wise Evaluation -->
+
+            <div class="dashboard-card">
+
+                <h2>
+                    Question-wise Evaluation
+                </h2>
+
+
+                <div id="question-results">
+                </div>
+
+            </div>
+
+
+            <!-- Performance Summary -->
+
+            <div class="dashboard-card">
+
+                <h2>
+                    Performance Summary
+                </h2>
+
+
+                <div id="performance-summary">
+                </div>
+
+            </div>
+
+
+            <!-- Areas for Improvement -->
+
+            <div class="dashboard-card">
+
+                <h2>
+                    Areas for Improvement
+                </h2>
+
+
+                <div id="improvement-summary">
+                </div>
+
+            </div>
+
+
+            <!-- Recommendations -->
+
+            <div class="dashboard-card">
+
+                <h2>
+                    Recommendations
+                </h2>
+
+
+                <div id="recommendation-summary">
+                </div>
+
+            </div>
+
+
+            <!-- Start Another Interview -->
+
+            <div class="dashboard-card">
+
+                <h2>
+                    Continue Practicing
+                </h2>
+
+                <p>
+                    Take another AI-powered interview
+                    to improve your technical performance.
+                </p>
+
+
+                <a href="/interview/setup">
+
+                    <button type="button">
+                        Start Another Interview
+                    </button>
+
+                </a>
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+    <script
+        src="{{ url_for('static', filename='js/results.js') }}"
+    ></script>
+
+</body>
+
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Interview Setup | Smart Interview System</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+</head>
+
+<body>
+
+    {% include "navbar.html" %}
+
+    <main class="container">
+
+        <section class="card">
+
+            <h1>Interview Setup</h1>
+
+            <p>
+                Configure your AI interview by selecting a domain
+                and difficulty level.
+            </p>
+
+            <form id="interviewSetupForm">
+
+                <div class="form-group">
+
+                    <label for="domain">
+                        Interview Domain
+                    </label>
+
+                    <select
+                        id="domain"
+                        name="domain"
+                        required
+                    >
+
+                        <option value="">
+                            Select Domain
+                        </option>
+
+                        <option value="Python">
+                            Python
+                        </option>
+
+                        <option value="Java">
+                            Java
+                        </option>
+
+                        <option value="Machine Learning">
+                            Machine Learning
+                        </option>
+
+                        <option value="SQL">
+                            SQL
+                        </option>
+
+                        <option value="Data Structures and Algorithms">
+                            Data Structures and Algorithms
+                        </option>
+
+                        <option value="Software Engineering">
+                            Software Engineering
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="difficulty">
+                        Difficulty Level
+                    </label>
+
+                    <select
+                        id="difficulty"
+                        name="difficulty"
+                        required
+                    >
+
+                        <option value="">
+                            Select Difficulty
+                        </option>
+
+                        <option value="easy">
+                            Easy
+                        </option>
+
+                        <option value="medium">
+                            Medium
+                        </option>
+
+                        <option value="hard">
+                            Hard
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    id="start-interview-btn"
+                >
+                    Start Interview
+                </button>
+
+            </form>
+
+
+            <p
+                id="setup-message"
+                class="message"
+            ></p>
+
+        </section>
+
+    </main>
+
+
+    <script
+        src="{{ url_for('static', filename='js/interview_setup.js') }}"
+    ></script>
+
+</body>
+
+</html>

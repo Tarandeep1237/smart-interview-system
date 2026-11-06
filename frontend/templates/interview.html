@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>AI Interview | Smart Interview System</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+    {% include "navbar.html" %}
+
+
+    <main class="container">
+
+
+        <!-- ============================= -->
+        <!-- LOADING SECTION                -->
+        <!-- ============================= -->
+
+        <section
+            id="loading-section"
+            class="card"
+        >
+
+            <h1>
+                Preparing Your Interview
+            </h1>
+
+            <p>
+                Our AI interviewer is generating
+                personalized technical questions based
+                on your selected domain and difficulty.
+            </p>
+
+            <p
+                id="status-message"
+                class="message"
+            >
+                Generating your interview questions...
+            </p>
+
+        </section>
+
+
+        <!-- ============================= -->
+        <!-- INTERVIEW SECTION              -->
+        <!-- ============================= -->
+
+        <section
+            id="interview-section"
+            class="card"
+            style="display: none;"
+        >
+
+            <div class="dashboard-header">
+
+                <h1>
+                    AI Technical Interview
+                </h1>
+
+                <p id="interview-info">
+                    Preparing interview...
+                </p>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <p
+                    id="question-number"
+                    class="question-number"
+                >
+                    Question 1 of 5
+                </p>
+
+
+                <h2 id="question-text">
+                    Loading question...
+                </h2>
+
+
+                <div class="form-group">
+
+                    <label for="answer">
+                        Your Answer
+                    </label>
+
+                    <textarea
+                        id="answer"
+                        rows="10"
+                        placeholder="Type your answer here..."
+                    ></textarea>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    id="submit-answer-btn"
+                >
+                    Submit Answer
+                </button>
+
+
+                <p
+                    id="status-message"
+                    class="message"
+                ></p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ============================= -->
+        <!-- EVALUATION SECTION             -->
+        <!-- ============================= -->
+
+        <section
+            id="result-section"
+            class="card"
+            style="display: none;"
+        >
+
+            <div class="dashboard-header">
+
+                <h1>
+                    AI Evaluation
+                </h1>
+
+                <p>
+                    Review the AI-generated evaluation
+                    of your answer.
+                </p>
+
+            </div>
+
+
+            <div
+                id="evaluation-content"
+                class="dashboard-card"
+            ></div>
+
+
+            <div class="dashboard-card">
+
+                <button
+                    type="button"
+                    id="next-question-btn"
+                >
+                    Next Question
+                </button>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <script
+        src="{{ url_for('static', filename='js/interview.js') }}"
+    ></script>
+
+</body>
+
+</html>
